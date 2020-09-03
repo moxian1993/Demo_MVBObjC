@@ -17,6 +17,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    [self setupNavi];
+}
+
+- (void)setupNavi {
+    [self.navigationItem setRightBarButtonItem:[UIBarButtonItem.alloc initWithCustomView:Button.img(@"navigationbar_pop").highImg(@"navigationbar_pop_highlighted").onClick(^{
+        
+    })]];
 }
 
 /*
