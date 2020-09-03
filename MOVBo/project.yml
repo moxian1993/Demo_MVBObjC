@@ -1,0 +1,19 @@
+name: MOVBo
+options:
+  bundleIdPrefix: M
+  developmentLanguage: en
+settings:
+  DEVELOPMENT_TEAM: T265XVEUYV
+targets:
+  MOVBo:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: MOVBo
+    settings:
+      INFOPLIST_FILE: MOVBo/Info.plist
+      GCC_PREFIX_HEADER: MOVBo/PrefixHeader.pch
+      PRODUCT_BUNDLE_IDENTIFIER: M.MOVBo
+    scheme:
+      disableMainThreadChecker: true

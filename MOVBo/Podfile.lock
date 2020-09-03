@@ -1,0 +1,87 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - IQKeyboardManager (6.5.6)
+  - KVOController (1.2.0)
+  - Masonry (1.1.0)
+  - MJRefresh (3.5.0)
+  - NerdyUI (1.2.1):
+    - NerdyUI/Chainable (= 1.2.1)
+    - NerdyUI/Private (= 1.2.1)
+    - NerdyUI/Public (= 1.2.1)
+  - NerdyUI/Chainable (1.2.1):
+    - NerdyUI/Private
+    - NerdyUI/Public
+  - NerdyUI/Private (1.2.1)
+  - NerdyUI/Public (1.2.1):
+    - NerdyUI/Private
+  - pop (1.0.12)
+  - ReactiveObjC (3.1.1)
+  - SVProgressHUD (2.2.5)
+  - Toast (4.0.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - FMDB
+  - IQKeyboardManager
+  - KVOController
+  - Masonry
+  - MJRefresh
+  - NerdyUI
+  - pop
+  - ReactiveObjC
+  - SVProgressHUD
+  - Toast
+  - YYKit
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - FMDB
+    - IQKeyboardManager
+    - KVOController
+    - Masonry
+    - MJRefresh
+    - NerdyUI
+    - pop
+    - ReactiveObjC
+    - SVProgressHUD
+    - Toast
+    - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  NerdyUI: ae4506046b544a5cdc0873a58c1ece61b29631d0
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: aad0f33a9a5ed641b4824690022a6c8711960c43
+
+COCOAPODS: 1.9.1

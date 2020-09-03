@@ -1,0 +1,90 @@
+//
+//  PrefixHeader.pch
+//  Utils
+//
+//  Created by Xian Mo on 2020/8/27.
+//  Copyright © 2020 Mo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <ReactiveObjC.h>
+#import <NerdyUI.h>
+
+
+// define
+#ifdef DEBUG
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+
+// gcd
+#define BACK_SYNC(block) dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+
+// UI
+#define Screen_Width            ([UIScreen mainScreen].bounds.size.width)
+#define Screen_Height           ([UIScreen mainScreen].bounds.size.height)
+#define StatusBar_Height        ([UIApplication sharedApplication].statusBarFrame.size.height)
+
+// adaptive
+#define MScale                  (375.0 / SCREEN_WIDTH)
+#define MSafeTop                ([[UIApplication sharedApplication] statusBarFrame].size.height)
+#define MSafeBottom \
+^{if (@available(iOS 11.0, *)) {\
+return (CGFloat)[UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom;\
+} else {\
+return (CGFloat)0.f;\
+}}()\
+
+
+
+// font
+#define FONT(S)  [UIFont fontWithName:@"PingFangSC-Regular" size:S]
+#define FONTThin(S)  [UIFont fontWithName:@"PingFangSC-Thin" size:S]
+#define FONTBold(S) [UIFont fontWithName:@"PingFangSC-Semibold" size:S]
+#define FONTMedium(S) [UIFont fontWithName:@"PingFangSC-Medium" size:S]
+#define FONTAequilate(S) [UIFont fontWithName:@"ArialMT" size:S]
+
+// stackview
+#define StackFixed(w, h) \
+^{\
+    UIView *view = UIView.new;\
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {\
+        make.width.mas_equalTo(w);\
+        make.height.mas_equalTo(h);\
+    }];\
+    return view;\
+}()
+
+#define StackSpring(axis) \
+^{\
+    UIView *view = UIView.new; \
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {\
+        if (axis == UILayoutConstraintAxisHorizontal) {\
+            make.width.mas_equalTo(1000).priorityLow();\
+        } else {\
+            make.height.mas_equalTo(1000).priorityLow();\
+        }\
+    }];\
+    return view;\
+}()
+
+
+// runtime
+#define ASSOCIATED_OBJ(getter, setter, type, ...) \
+- (type)getter {\
+return [objc_getAssociatedObject(self, _cmd) type##Value];\
+}\
+\
+- (void)setter:(type)getter {\
+objc_setAssociatedObject(self, @selector(getter), [NSValue valueWith##type:getter], OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+__VA_ARGS__;\
+}
+
+#endif /* PrefixHeader_pch */
