@@ -10,8 +10,8 @@
 #define PrefixHeader_pch
 
 #import <UIKit/UIKit.h>
-#import <ReactiveObjC.h>
-#import <NerdyUI.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <NerdyUI/NerdyUI.h>
 
 
 // define
