@@ -23,7 +23,6 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     self.window.rootViewController = MOTabBarController.new;
-    self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     [self.window makeKeyAndVisible];
     
     [MOSVProgressHUDManager setupConfig];
