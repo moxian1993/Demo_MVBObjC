@@ -7,6 +7,17 @@
     {
       "filename" : "common_button_white@2x.png",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 10,
+          "right" : 11
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
       "scale" : "2x"
     },
     {

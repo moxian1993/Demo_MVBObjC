@@ -8,6 +8,7 @@
 
 #import "SceneDelegate.h"
 #import "MOTabBarController.h"
+#import "MOSVProgressHUDManager.h"
 
 @interface SceneDelegate ()
 
@@ -20,8 +21,13 @@
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
     self.window.frame = [UIScreen mainScreen].bounds;
+    
     self.window.rootViewController = MOTabBarController.new;
+    self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     [self.window makeKeyAndVisible];
+    
+    [MOSVProgressHUDManager setupConfig];
+    [MOSVProgressHUDManager tapToDimiss:YES];
 }
 
 

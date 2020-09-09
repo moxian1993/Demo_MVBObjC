@@ -34,7 +34,7 @@
         UIImage *image = [[UIImage imageNamed:imgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UIImage *selectedImage = [[UIImage imageNamed:(imgName.a(@"_selected"))] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         navi.tabBarItem.title = name;
-        [navi.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.whiteColor} forState:UIControlStateNormal];
+        [navi.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.orangeColor} forState:UIControlStateNormal];
         navi.tabBarItem.image = image;
         navi.tabBarItem.selectedImage = selectedImage;
         [self addChildViewController:navi];

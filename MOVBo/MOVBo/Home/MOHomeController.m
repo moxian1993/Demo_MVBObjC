@@ -6,7 +6,6 @@
 //
 
 #import "MOHomeController.h"
-
 @interface MOHomeController ()
 
 @end
@@ -16,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self.visitorView updateTitle:@"关注一些人，回到这里看看有什么惊喜" imageName:@"visitordiscover_feed_image_smallicon" isHome:YES];
     [self setupNavi];
 }
 
@@ -24,16 +23,7 @@
     [self.navigationItem setRightBarButtonItem:[UIBarButtonItem.alloc initWithCustomView:Button.img(@"navigationbar_pop").highImg(@"navigationbar_pop_highlighted").onClick(^{
         
     })]];
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
