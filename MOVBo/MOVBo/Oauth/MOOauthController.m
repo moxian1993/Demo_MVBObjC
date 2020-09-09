@@ -49,6 +49,9 @@
     if ([url.host isEqualToString:@"www.baidu.com"] && [url.query containsString:@"code"]) {
         [SVProgressHUD show];
         [self.oauthVM getATWithCode:[url.query substringFromIndex:5] completed:^(id  _Nullable json, NSError * _Nullable error) {
+            if (self.didSignOn) {            
+                self.didSignOn();
+            }
             [SVProgressHUD dismissWithDelay:0.5];
             [self dismissViewControllerAnimated:YES completion:nil];
         }];

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MOOauthController : MOViewController
 
+@property (nonatomic, copy) void(^didSignOn)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

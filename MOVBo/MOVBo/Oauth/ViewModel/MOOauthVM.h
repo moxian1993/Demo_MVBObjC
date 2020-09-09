@@ -7,10 +7,15 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
+#import "MOUserAccount.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MOOauthVM : NSObject <WKNavigationDelegate>
+@interface MOOauthVM : NSObject
+
+@property (nonatomic, assign) BOOL isLogin;
+
+@property (nonatomic, strong) MOUserAccount *userAccount;
 
 @property (nonatomic, copy) NSURLRequest *authorizeRequest;
 

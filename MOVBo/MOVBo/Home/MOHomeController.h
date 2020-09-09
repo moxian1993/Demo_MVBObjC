@@ -6,11 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MOViewController.h"
+#import "MOBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MOHomeController : MOViewController
+@interface MOHomeController : MOBaseController
 
 @end
 

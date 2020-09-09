@@ -7,7 +7,6 @@
 
 #import "MOOauthVM.h"
 #import "NetworkManager.h"
-#import "MOUserAccount.h"
 
 #define kClient_id       @"3157073363"
 #define kClient_secret   @"3d4f215c62f4391ac3a02a0f57d2119b"
@@ -27,6 +26,21 @@ static MOOauthVM *_instance;
         _instance = [[self alloc] init];
     });
     return _instance;
+}
+
+//- (instancetype)init {
+//    if (self = [super init]) {
+//        self.userAccount = [self getAccount];
+//    }
+//    return self;
+//}
+
+- (BOOL)isLogin {
+    if (self.userAccount &&
+        [self.userAccount.expires_date compare:[NSDate date]] == NSOrderedDescending) {
+        return YES;
+    }
+    return NO;
 }
 
 - (NSURLRequest *)authorizeRequest {
@@ -68,7 +82,9 @@ static MOOauthVM *_instance;
             if (completed) {
                 completed(json, nil);
             }
-            [self saveAccount:[MOUserAccount modelWithJSON:json]];
+            MOUserAccount *account = [MOUserAccount modelWithJSON:json];
+            self.userAccount = account;
+            [self saveAccount: account];
         }
     }];
 }
